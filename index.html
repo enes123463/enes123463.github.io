@@ -3,18 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KEVIN MAKRO — REDLINE | Sinematik Biyografi</title>
-  <meta name="description" content="Kevin Makro — REDLINE'ın kurucusu. Sinematik biyografi, görseller ve hikâye.">
+  <title>MARKA ADI — Doğrudan Satış</title>
+  <meta name="description" content="MARKA ADI: El yapımı ürünler, sınırlı stoklar ve hızlı teslimat." />
   <style>
-    :root{--bg:#0b0c10;--card:#111217;--muted:#9aa5b5;--text:#f3f6fb;--pri:#4f46e5}
-    *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    .container{max-width:1100px;margin:0 auto;padding:20px}
-    .card{background:#111217;border:1px solid #1b2033;border-radius:16px;padding:16px}
-    a{color:#cbd6ff;text-decoration:none}
-    /* HERO */
-    <a class="btn" href="#kevin-hikaye">Kevin Makro</a>
+    :root{--bg:#0b0c10;--card:#111217;--muted:#a7b0c0;--text:#f3f6fb;--pri:#4f46e5;--pri-2:#22c55e}
+    *{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--pri),#7c3aed);display:grid;place-items:center;font-weight:700}
+    .brand .name{font-weight:700;letter-spacing:.2px}
+    .nav .cta{display:flex;gap:10px}
+    .btn{padding:10px 16px;border-radius:999px;background:#1b1d27;border:1px solid #222538}
+    .btn.primary{background:var(--pri);border-color:transparent}
+    .btn.whatsapp{background:#1ebe5d;border-color:#0ea44a}
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:24px 0}
+    .hero h1{font-size:40px;line-height:1.1;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .hero .card{background:linear-gradient(180deg,#121420, #0d0f16);border:1px solid #1d2136;border-radius:18px;padding:20px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .badge{padding:6px 10px;border-radius:999px;background:#131522;border:1px solid #242945;color:#cbd2e1;font-size:12px}
+    .section{padding:12px 0 28px}
+    .section h2{font-size:26px;margin:6px 0 14px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid #1b2033;border-radius:16px;overflow:hidden}
+    .card .cover{width:100%;height:200px;background:linear-gradient(135deg,#1f2937,#0f172a)}
+    .card .body{padding:16px}
+    .price{display:flex;align-items:center;gap:8px;font-weight:700}
+    .price small{color:var(--muted);font-weight:500;text-decoration:line-through}
+    .pill{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #283049;color:#aab5cf}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+    .btn.full{display:block;width:100%;text-align:center;margin-top:10px}
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .feat{background:var(--card);border:1px solid #1b2033;border-radius:12px;padding:12px;color:#cfd6e6}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .kargo{display:flex;gap:10px;flex-wrap:wrap}
+    .kargo img{height:22px;opacity:.8;filter:grayscale(1)}
+    .footer{border-top:1px solid #1b2033;opacity:.95;margin-top:26px}
+    .footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px;padding-top:18px}
+    .tiny{font-size:12px;color:#8f99ad}
+    .notice{font-size:13px;color:#cbd2e1;background:#10131d;border:1px dashed #27314f;border-radius:12px;padding:12px;margin-top:12px}
 
-    .km-hero{position:relative;height:68vh;min-height:420px;overflow:hidden;border-radius:18px;margin:14px 20px;background:#0b0c10}
+    /* ==== KEVIN MAKRO BÖLÜM ==== */
+    .km-hero{position:relative;height:68vh;min-height:420px;overflow:hidden;border-radius:18px;margin:20px;background:#0b0c10}
     .km-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.2) contrast(1.05) brightness(.8);transform:scale(1.06)}
     .km-overlay{position:absolute;inset:0;background:radial-gradient(1200px 600px at 20% -10%, rgba(13,16,26,.6), rgba(11,12,16,.95)),linear-gradient(180deg, rgba(6,8,14,0), rgba(6,8,14,.8))}
     .km-smoke{position:absolute;inset:-40% -10%;background:radial-gradient(50% 30% at 40% 20%, rgba(255,255,255,.06), transparent 60%), radial-gradient(30% 20% at 70% 60%, rgba(255,255,255,.05), transparent 60%);filter:blur(16px);animation:smoke 16s linear infinite}
@@ -26,7 +58,6 @@
     .km-lead{color:#b9c6dc;max-width:720px}
     .km-cta{margin-top:14px;display:inline-block;padding:10px 16px;border-radius:999px;background:#4f46e5;color:white;border:1px solid transparent}
     .km-cta:hover{filter:brightness(1.1)}
-    /* CONTENT */
     .km-content{margin-top:18px}
     .km-cols{display:grid;grid-template-columns:1.3fr .9fr;gap:16px}
     .km-story h3{margin:0 0 8px}
@@ -38,82 +69,151 @@
     .km-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 20px}
     .km-facts .fact{background:#0f1320;border:1px solid #1c2540;border-radius:12px;padding:12px;color:#cfd6e6}
     .km-facts .fact span{display:block;color:#8ea0b8;font-size:12px;margin-bottom:4px}
-    @media (max-width:900px){.km-title{font-size:38px}.km-cols{grid-template-columns:1fr}.km-facts{grid-template-columns:1fr 1fr;margin:14px}}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr}.footer .cols{grid-template-columns:1fr 1fr}.km-title{font-size:38px}.km-cols{grid-template-columns:1fr}.km-facts{grid-template-columns:1fr 1fr;margin:14px}}
+    @media (max-width:600px){.grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <!-- HERO -->
+  <header class="container nav">
+    <div class="brand">
+      <div class="logo">M</div>
+      <div class="name">MARKA ADI</div>
+    </div>
+    <div class="cta">
+      <a class="btn" href="#urunler">Ürünler</a>
+      <a class="btn" href="#hakkimizda">Hakkımızda</a>
+      <a class="btn" href="#kevin-hikaye">Kevin Makro</a>
+      <a class="btn whatsapp" href="https://wa.me/905555555555" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- Normal satış hero -->
+  <section class="container hero">
+    <div>
+      <h1>Doğrudan Üreticiden <br/> Hızlı Teslimat ✨</h1>
+      <p>El yapımı / kişiye özel / sınırlı stok. Güvenli ödeme, aynı gün kargo. Aşağıdan ürünleri inceleyin; siparişinizi WhatsApp veya ödeme sayfasından tamamlayın.</p>
+      <div class="badges">
+        <span class="badge">Güvenli Ödeme</span>
+        <span class="badge">Kapıda Ödeme (opsiyonel)</span>
+        <span class="badge">14 Gün İade</span>
+        <span class="badge">Müşteri Desteği</span>
+      </div>
+    </div>
+    <div class="card">
+      <strong>Hızlı Başlangıç</strong>
+      <ol>
+        <li>Alan adını bağla (ör. <em>marka.com</em>)</li>
+        <li>Ödeme sağlayıcını ekle (iyzico/PayTR/Craftgate)</li>
+        <li>Kargo anlaşmanı gir (Yurtiçi/Aras/MNG)</li>
+        <li>Ürünleri yükle ve yayına al</li>
+      </ol>
+      <div class="notice">Not: Bu şablonda ödeme butonu WhatsApp yönlendirmeli. Dilersen gerçek ödeme ile değiştirebilirsin.</div>
+    </div>
+  </section>
+
+  <!-- Ürünler -->
+  <section id="urunler" class="container section">
+    <h2>Öne Çıkan Ürünler</h2>
+    <div class="grid">
+      <!-- Ürün 1 -->
+      <article class="card">
+        <div class="cover" aria-hidden="true"></div>
+        <div class="body">
+          <div class="row">
+            <strong>Ürün Adı 1</strong>
+            <span class="pill">Stokta</span>
+          </div>
+          <p class="tiny">Kısa açıklama: malzeme/özellik/ölçü…</p>
+          <div class="row">
+            <div class="price">₺499 <small>₺599</small></div>
+            <a class="btn" href="#">Detay</a>
+          </div>
+          <a class="btn primary full" href="https://wa.me/905555555555?text=Merhaba%2C%20Ürün%20Adı%201%20sipariş%20vermek%20istiyorum" target="_blank" rel="noopener">Sipariş Ver (WhatsApp)</a>
+        </div>
+      </article>
+
+      <!-- Ürün 2 -->
+      <article class="card">
+        <div class="cover" aria-hidden="true"></div>
+        <div class="body">
+          <div class="row">
+            <strong>Ürün Adı 2</strong>
+            <span class="pill">Ön Sipariş</span>
+          </div>
+          <p class="tiny">Kısa açıklama: malzeme/özellik/ölçü…</p>
+          <div class="row">
+            <div class="price">₺799</div>
+            <a class="btn" href="#">Detay</a>
+          </div>
+          <a class="btn primary full" href="https://wa.me/905555555555?text=Merhaba%2C%20Ürün%20Adı%202%20için%20ön%20sipariş%20vermek%20istiyorum" target="_blank" rel="noopener">Sipariş Ver (WhatsApp)</a>
+        </div>
+      </article>
+
+      <!-- Ürün 3 -->
+      <article class="card">
+        <div class="cover" aria-hidden="true"></div>
+        <div class="body">
+          <div class="row">
+            <strong>Ürün Adı 3</strong>
+            <span class="pill">Sınırlı</span>
+          </div>
+          <p class="tiny">Kısa açıklama: malzeme/özellik/ölçü…</p>
+          <div class="row">
+            <div class="price">₺349</div>
+            <a class="btn" href="#">Detay</a>
+          </div>
+          <a class="btn primary full" href="https://wa.me/905555555555?text=Merhaba%2C%20Ürün%20Adı%203%20sipariş%20vermek%20istiyorum" target="_blank" rel="noopener">Sipariş Ver (WhatsApp)</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Kevin Makro Bölümü -->
   <section class="km-hero">
-    <!-- Arka plan görselini repo köküne yükle: 2415.jpg -->
     <img class="km-bg" src="2415.jpg" alt="Kevin Makro" />
     <div class="km-overlay"></div>
     <div class="km-smoke"></div>
     <div class="km-hero-inner">
       <div class="km-badge"><strong>GANG BOSS — REDLINE</strong></div>
       <h1 class="km-title">KEVIN <span>MAKRO</span></h1>
-      <p class="km-lead">Sirenlerin kestiği bir çocukluk… O geceden beri <strong>sadakat</strong> kutsal, <strong>ihanet</strong> ölümcül. Şehir onun sahnesi; hız, onun dili.</p>
+      <p class="km-lead">Sirenlerin kestiği bir çocukluk… O geceden beri <strong>sadakat</strong> kutsal, <strong>ihanet</strong> ölümcül.</p>
       <a href="#kevin-hikaye" class="km-cta">Hikâyeyi Oku</a>
     </div>
   </section>
 
-  <!-- HİKÂYE -->
   <div id="kevin-hikaye" class="km-content container">
     <div class="km-cols">
       <article class="km-story card">
         <h3>Gang Boss’un Doğuşu</h3>
-        <p>
-          Gece çöktüğünde beyaz AMG'nin farları tozu yaran bir bıçak gibi yolu yarar. Maskenin ardında kalan gözler,
-          yıllar önce siren sesleriyle parçalanan bir çocukluğun izlerini taşır. <strong>Kevin Makro</strong>, polislerin
-          ellerinde ailesini kaybettiği gecede doğdu; nefesi öfkeden, pusulası sadakatten yapılmıştı.
-        </p>
-        <p>
-          Sokaklar ona para kazanmayı, hayatta kalmayı değil; <em>insanları okumayı</em> öğretti. Karizmasıyla dağılan
-          küçük ekipleri birleştirdi, sözünü tutanları kolladı, ihaneti ezdi. Adı fısıltıyla dolaşır; kimileri gangster der,
-          kimileri <em>kendi adaletini koyan kral</em>.
-        </p>
+        <p>Kevin Makro, polislerin ailesini yok ettiği gecede yeniden doğdu. Sokaklar ona sadece hayatta kalmayı değil, kendi adaletini kurmayı öğretti.</p>
         <blockquote>“Ailem gitti… ama bu şehir artık benim.”</blockquote>
-
         <h3 style="margin-top:12px">REDLINE’ın Doğuşu</h3>
-        <p>
-          Kevin’in yalnız öfkesi, sokakların en sadık ekibiyle birleşti ve ortaya <strong>REDLINE</strong> çıktı.
-          Adını asfaltı yaran kırmızı izlerden alan çete; hız, disiplin ve ölümüne sadakati aynı çizgide toplar.
-        </p>
-        <p>Onlar için hız özgürlüktür, ihanet ise son duraktır. REDLINE geçerken geriye duman, far ışıkları ve korku kalır.</p>
+        <p>Kevin’in yalnız öfkesi, sadık ekibiyle birleşti ve ortaya <strong>REDLINE</strong> çıktı. Adını asfaltı yaran kırmızı izlerden alan bu çete, hız, disiplin ve sadakati aynı çizgide toplar.</p>
+        <p>Onlar için hız özgürlük, ihanet ise son duraktır. REDLINE geçerken geriye sadece duman ve korku kalır.</p>
       </article>
-
       <aside class="km-side">
         <div class="km-card">
-          <!-- 2515.jpg ve 2414.jpg dosyalarını repo köküne yükle -->
-          <img src="2515.jpg" alt="Kevin — araç ve hız"/>
-          <div class="km-caption">Hız ve güç onun dili; arabalar ve motorlar özgürlüğün sembolü.</div>
+          <img src="2515.jpg" alt="Kevin — araç"/>
+          <div class="km-caption">Hız ve güç onun dili; arabalar özgürlüğün sembolü.</div>
         </div>
         <div class="km-card">
           <img src="2414.jpg" alt="Kevin — ekip"/>
-          <div class="km-caption">Yalnız yürümez: ekibi ailesidir; ihanet cezasız kalmaz.</div>
+          <div class="km-caption">Ekibi ailesidir; ihanet cezasız kalmaz.</div>
         </div>
       </aside>
     </div>
   </div>
-
-  <!-- KISA ÖZET KUTULARI -->
   <div class="km-facts">
-    <div class="fact"><span>İmza</span>Beyaz maske, siyah-beyaz stil</div>
+    <div class="fact"><span>İmza</span>Beyaz maske</div>
     <div class="fact"><span>Kurallar</span>Sadakat; ihanet yok</div>
-    <div class="fact"><span>Takıntı</span>Gece sürüşleri, soğuk planlar</div>
+    <div class="fact"><span>Takıntı</span>Gece sürüşleri</div>
     <div class="fact"><span>Çete</span>REDLINE — hız, sadakat, ölümüne savaş</div>
   </div>
 
-  <script>
-    // Basit fade-in animasyonu
-    (function(){
-      const els = document.querySelectorAll('.card, .km-card, .fact');
-      els.forEach(el=>{ el.style.opacity=.0; el.style.transform='translateY(8px)'; el.style.transition='opacity .6s ease, transform .6s ease'; });
-      const io = new IntersectionObserver(entries=>{
-        entries.forEach(e=>{ if(e.isIntersecting){ e.target.style.opacity=1; e.target.style.transform='translateY(0)'; io.unobserve(e.target); } });
-      }, {threshold:.12});
-      els.forEach(el=> io.observe(el));
-    })();
-  </script>
-</body>
-</html>
-
+  <!-- Footer -->
+  <footer class="container footer">
+    <div class="cols">
+      <div>
+        <strong>MARKA ADI</strong>
+        <p class="tiny">Vergi No / MERSİS / İletişim: info@marka.com</p>
+     
