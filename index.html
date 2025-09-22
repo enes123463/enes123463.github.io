@@ -90,7 +90,7 @@
     <div class="km-redline"></div>
     <div class="km-hero-inner">
       <div class="km-badge"><strong>REDLINE EVRENİ</strong></div>
-      <h1 id="heroTitle" class="km-title">KEVIN <span>MAKRO</span> & ANDREW <span>MKR</span></h1>
+      <h1 id="heroTitle" class="km-title">KEVIN <span>MAKRO</span><span></span></h1>
       <p class="km-lead">Sadakat kutsal, ihanet ölümcül. İki kardeş, tek çizgi: REDLINE.</p>
     </div>
   </section>
@@ -213,35 +213,4 @@
 </script>
 
 
-    // Otomatik dene
-    audio.play().then(()=> setTimeout(tryUnmute, 800)).catch(()=>{});
-
-    // İlk etkileşimde sesi aç (Safari/iOS için)
-    const unlock = () => { tryUnmute(); cleanup(); };
-    function cleanup(){
-      window.removeEventListener('touchstart', unlock);
-      window.removeEventListener('pointerdown', unlock);
-      window.removeEventListener('keydown', unlock);
-    }
-    window.addEventListener('touchstart', unlock, {once:true});
-    window.addEventListener('pointerdown', unlock, {once:true});
-    window.addEventListener('keydown', unlock, {once:true});
-
-    // Buton kontrolü
-    btn.addEventListener('click', ()=>{
-      if(audio.paused){
-        audio.play().then(()=>{ audio.muted=false; updateBtn(); });
-      } else {
-        audio.pause(); updateBtn();
-      }
-    });
-
-    audio.addEventListener('play', updateBtn);
-    audio.addEventListener('pause', updateBtn);
-    updateBtn();
-  })();
-  </script>
-
-</body>
-</html>
 
