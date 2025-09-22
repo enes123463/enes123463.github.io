@@ -1,6 +1,186 @@
-<!doctype html> <html lang="tr"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <title>KEVIN MAKRO — REDLINE | Sinematik Biyografi</title> <meta name="description" content="Kevin Makro — REDLINE'ın kurucusu. Sinematik biyografi, görseller ve hikâye."> <!-- Open Graph / paylaşım --> <meta property="og:title" content="KEVIN MAKRO — REDLINE | Sinematik Biyografi"> <meta property="og:description" content="Sirenlerin kestiği bir çocukluk… Sadakat kutsal, ihanet ölümcül. REDLINE'ın doğuşu."> <meta property="og:type" content="website"> <meta property="og:image" content="2415.jpg"> <meta name="theme-color" content="#0b0c10"> <style> :root{ --bg:#0b0c10;--card:#111217;--muted:#9aa5b5;--text:#f3f6fb; --pri:#4f46e5;--accent:#ff3b3b;--line:#1c2540 } *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif} .container{max-width:1100px;margin:0 auto;padding:20px} .card{background:#111217;border:1px solid #1b2033;border-radius:16px;padding:16px} a{color:#cbd6ff;text-decoration:none} a:focus-visible, button:focus-visible{outline:2px dashed #7c9cff;outline-offset:2px} /* ===== HERO */ .km-hero{position:relative;height:72vh;min-height:460px;overflow:hidden; border-radius:18px;margin:14px 20px;background:#0b0c10} .km-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover; filter:grayscale(.15) contrast(1.05) brightness(.84);transform:scale(1.06)} .km-overlay{position:absolute;inset:0; background:radial-gradient(1200px 600px at 18% -8%, rgba(13,16,26,.55), rgba(11,12,16,.95)), linear-gradient(180deg, rgba(6,8,14,0), rgba(6,8,14,.85))} /* soft duman */ .km-smoke{position:absolute;inset:-40% -10%; background: radial-gradient(50% 30% at 40% 20%, rgba(255,255,255,.06), transparent 60%), radial-gradient(30% 20% at 70% 60%, rgba(255,255,255,.05), transparent 60%); filter:blur(16px);animation:smoke 16s linear infinite} @keyframes smoke{0%{transform:translateX(-4%)}50%{transform:translateX(4%) translateY(-2%)}100%{transform:translateX(-4%)}} /* neon “REDLINE” izi */ .km-redline{ position:absolute;left:0;right:0;bottom:16%; height:2px;background:linear-gradient(90deg, transparent, var(--accent), transparent); filter:drop-shadow(0 0 8px rgba(255,59,59,.65)); opacity:.75 } .km-hero-inner{position:relative;z-index:2;height:100%; display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:28px 36px} .km-badge{display:inline-block;padding:6px 12px;border:1px solid #2a375d;border-radius:999px; background:#0f1322cc;color:#cbd6ff;font-size:12px;letter-spacing:.6px} .km-title{font-size:58px;line-height:1.0;margin:10px 0 6px;text-shadow:0 10px 30px rgba(0,0,0,.45)} .km-title span{color:var(--accent);text-shadow:0 0 14px rgba(255,59,59,.35)} .km-lead{color:#b9c6dc;max-width:720px} .km-cta{margin-top:16px;display:inline-block;padding:10px 18px;border-radius:999px; background:var(--pri);color:white;border:1px solid transparent;transition:transform .15s ease} .km-cta:hover{filter:brightness(1.06);transform:translateY(-1px)} .km-cta:active{transform:translateY(0)} /* ===== CONTENT */ .km-content{margin-top:18px} .km-cols{display:grid;grid-template-columns:1.3fr .9fr;gap:16px} .km-story h3{margin:0 0 8px} .km-story blockquote{margin:10px 0 0;padding-left:12px;border-left:3px solid var(--pri);color:#b9c6dc} .sep{height:1px;background:linear-gradient(90deg, transparent, #2a335a, transparent);margin:14px 0} .km-side{display:grid;gap:12px} .km-card{background:#0f1320;border:1px solid var(--line);border-radius:14px;overflow:hidden} .km-card img{width:100%;height:220px;object-fit:cover;display:block} .km-caption{font-size:12px;color:#9fb0cd;padding:10px} .km-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 20px} .km-facts .fact{background:#0f1320;border:1px solid var(--line);border-radius:12px;padding:12px;color:#cfd6e6} .km-facts .fact span{display:block;color:#8ea0b8;font-size:12px;margin-bottom:4px} /* parallax (hafif) */ .parallax{transform:translateY(0);will-change:transform;transition:transform .25s ease-out} /* erişilebilirlik: hareket azalt */ @media (prefers-reduced-motion: reduce){ .km-smoke, .parallax{animation:none;transition:none} } @media (max-width:900px){ .km-title{font-size:40px} .km-cols{grid-template-columns:1fr} .km-facts{grid-template-columns:1fr 1fr;margin:14px} } </style> </head> <body> <!-- HERO --> <section class="km-hero" aria-labelledby="heroTitle"> <!-- Arka plan görselini repo köküne yükle: 2415.jpg --> <img class="km-bg parallax" src="2415.jpg" alt="Kevin Makro — beyaz AMG önünde" /> <div class="km-overlay"></div> <div class="km-smoke"></div> <div class="km-redline"></div> <div class="km-hero-inner"> <div class="km-badge"><strong>GANG BOSS — REDLINE</strong></div> <h1 id="heroTitle" class="km-title">KEVIN <span>MAKRO</span></h1> <p class="km-lead">Sirenlerin kestiği bir çocukluk… O geceden beri <strong>sadakat</strong> kutsal, <strong>ihanet</strong> ölümcül. Şehir onun sahnesi; hız, onun dili.</p> <a href="#kevin-hikaye" <a href="https://discord.gg/SENİN-LİNKİN" class="km-cta">Discord’a Katıl</a>
-class="km-cta">Hikâyeyi Oku</a> </div> </section> <!-- HİKÂYE --> <div id="kevin-hikaye" class="km-content container" aria-label="Kevin Makro hikâye bölümü"> <div class="km-cols"> <article class="km-story card"> <h3>Gang Boss’un Doğuşu</h3> <p> Gece çöktüğünde beyaz AMG'nin farları tozu yaran bir bıçak gibi yolu yarar. Maskenin ardında kalan gözler, yıllar önce siren sesleriyle parçalanan bir çocukluğun izlerini taşır. <strong>Kevin Makro</strong>, polislerin ellerinde ailesini kaybettiği gecede doğdu; nefesi öfkeden, pusulası sadakatten yapılmıştı. </p> <p> Sokaklar ona para kazanmayı, hayatta kalmayı değil; <em>insanları okumayı</em> öğretti. Karizmasıyla dağılan küçük ekipleri birleştirdi, sözünü tutanları kolladı, ihaneti ezdi. Adı fısıltıyla dolaşır; kimileri gangster der, kimileri <em>kendi adaletini koyan kral</em>. </p> <blockquote>“Ailem gitti… ama bu şehir artık benim.”</blockquote> <div class="sep" role="presentation"></div> <h3>REDLINE’ın Doğuşu</h3> <p> Kevin’in yalnız öfkesi, sokakların en sadık ekibiyle birleşti ve ortaya <strong>REDLINE</strong> çıktı. Adını asfaltı yaran kırmızı izlerden alan çete; hız, disiplin ve ölümüne sadakati aynı çizgide toplar. </p> <p>Onlar için hız özgürlüktür, ihanet ise son duraktır. REDLINE geçerken geriye duman, far ışıkları ve korku kalır.</p> </article> <aside class="km-side" aria-label="Görseller"> <div class="km-card"> <!-- 2515.jpg ve 2414.jpg dosyalarını repo köküne yükle --> <img src="2515.jpg" loading="lazy" alt="Kevin ve araç — hız ve güç"/> <div class="km-caption">Hız ve güç onun dili; arabalar ve motorlar özgürlüğün sembolü.</div> </div> <div class="km-card"> <img src="2414.jpg" loading="lazy" alt="Kevin ve ekip — sadakat"/> <div class="km-caption">Yalnız yürümez: ekibi ailesidir; ihanet cezasız kalmaz.</div> </div> </aside> </div> </div> <!-- KISA ÖZET KUTULARI --> <div class="km-facts" aria-label="Özet Bilgiler"> <div class="fact"><span>İmza</span>Beyaz maske, siyah-beyaz stil</div> <div class="fact"><span>Kurallar</span>Sadakat; ihanet yok</div> <div class="fact"><span>Takıntı</span>Gece sürüşleri, soğuk planlar</div> <div class="fact"><span>Çete</span>REDLINE — hız, sadakat, ölümüne savaş</div> </div> <script> // basit fade-in animasyonu (function(){ const els = document.querySelectorAll('.card, .km-card, .fact'); els.forEach(el=>{ el.style.opacity=.0; el.style.transform='translateY(8px)'; el.style.transition='opacity .6s ease, transform .6s ease'; }); const io = new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.style.opacity=1; e.target.style.transform='translateY(0)'; io.unobserve(e.target); } }); }, {threshold:.12}); els.forEach(el=> io.observe(el)); })(); // hafif parallax: hero arka planı kaydır (function(){ const bg = document.querySelector('.km-bg'); if(!bg) return; let ticking=false; function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(()=>{ const y = window.scrollY || document.documentElement.scrollTop || 0; const off = Math.min(20, y*0.06); // max 20px bg.style.transform = translateY(${off}px) scale(1.06); ticking=false; }); } window.addEventListener('scroll', onScroll, {passive:true}); })();<div style="margin-top:20px;font-size:14px;color:#9fb0cd">
-  👀 Bu site <img src="https://hits.sh/kevinmkr1.github.io.svg?style=for-the-badge&label=ziyaret&color=1b2033&labelColor=111217" alt="ziyaretçi sayacı"/> kez görüntülendi.
-</div>
- </script> </body> </html>
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KEVIN MAKRO — REDLINE | Sinematik Biyografi</title>
+  <meta name="description" content="Kevin Makro — REDLINE'ın kurucusu. Sinematik biyografi, görseller ve hikâye.">
 
+  <!-- Open Graph / paylaşım -->
+  <meta property="og:title" content="KEVIN MAKRO — REDLINE | Sinematik Biyografi">
+  <meta property="og:description" content="Sirenlerin kestiği bir çocukluk… Sadakat kutsal, ihanet ölümcül. REDLINE'ın doğuşu.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="2415.jpg">
+  <meta name="theme-color" content="#0b0c10">
+
+  <style>
+    :root{--bg:#0b0c10;--card:#111217;--muted:#9aa5b5;--text:#f3f6fb;
+      --pri:#4f46e5;--accent:#ff3b3b;--line:#1c2540}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .card{background:#111217;border:1px solid #1b2033;border-radius:16px;padding:16px}
+    a{color:#cbd6ff;text-decoration:none}
+    a:focus-visible, button:focus-visible{outline:2px dashed #7c9cff;outline-offset:2px}
+
+    /* ===== HERO */
+    .km-hero{position:relative;height:72vh;min-height:460px;overflow:hidden;
+      border-radius:18px;margin:14px 20px;background:#0b0c10}
+    .km-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+      filter:grayscale(.15) contrast(1.05) brightness(.84);transform:scale(1.06)}
+    .km-overlay{position:absolute;inset:0;
+      background:radial-gradient(1200px 600px at 18% -8%, rgba(13,16,26,.55), rgba(11,12,16,.95)),
+                  linear-gradient(180deg, rgba(6,8,14,0), rgba(6,8,14,.85))}
+    .km-smoke{position:absolute;inset:-40% -10%;
+      background:radial-gradient(50% 30% at 40% 20%, rgba(255,255,255,.06), transparent 60%),
+                 radial-gradient(30% 20% at 70% 60%, rgba(255,255,255,.05), transparent 60%);
+      filter:blur(16px);animation:smoke 16s linear infinite}
+    @keyframes smoke{0%{transform:translateX(-4%)}50%{transform:translateX(4%) translateY(-2%)}100%{transform:translateX(-4%)}}
+
+    .km-redline{position:absolute;left:0;right:0;bottom:16%;
+      height:2px;background:linear-gradient(90deg, transparent, var(--accent), transparent);
+      filter:drop-shadow(0 0 8px rgba(255,59,59,.65));opacity:.75}
+
+    .km-hero-inner{position:relative;z-index:2;height:100%;
+      display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:28px 36px}
+    .km-badge{display:inline-block;padding:6px 12px;border:1px solid #2a375d;border-radius:999px;
+      background:#0f1322cc;color:#cbd6ff;font-size:12px;letter-spacing:.6px}
+    .km-title{font-size:58px;line-height:1.0;margin:10px 0 6px;text-shadow:0 10px 30px rgba(0,0,0,.45)}
+    .km-title span{color:var(--accent);text-shadow:0 0 14px rgba(255,59,59,.35)}
+    .km-lead{color:#b9c6dc;max-width:720px}
+    .km-cta{margin-top:16px;display:inline-block;padding:10px 18px;border-radius:999px;
+      background:var(--pri);color:white;border:1px solid transparent;transition:transform .15s ease}
+    .km-cta:hover{filter:brightness(1.06);transform:translateY(-1px)}
+    .km-cta:active{transform:translateY(0)}
+
+    /* ===== CONTENT */
+    .km-content{margin-top:18px}
+    .km-cols{display:grid;grid-template-columns:1.3fr .9fr;gap:16px}
+    .km-story h3{margin:0 0 8px}
+    .km-story blockquote{margin:10px 0 0;padding-left:12px;border-left:3px solid var(--pri);color:#b9c6dc}
+    .sep{height:1px;background:linear-gradient(90deg, transparent, #2a335a, transparent);margin:14px 0}
+
+    .km-side{display:grid;gap:12px}
+    .km-card{background:#0f1320;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+    .km-card img{width:100%;height:220px;object-fit:cover;display:block}
+    .km-caption{font-size:12px;color:#9fb0cd;padding:10px}
+
+    .km-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 20px}
+    .km-facts .fact{background:#0f1320;border:1px solid var(--line);border-radius:12px;padding:12px;color:#cfd6e6}
+    .km-facts .fact span{display:block;color:#8ea0b8;font-size:12px;margin-bottom:4px}
+
+    @media (prefers-reduced-motion: reduce){
+      .km-smoke, .parallax{animation:none;transition:none}
+    }
+    @media (max-width:900px){
+      .km-title{font-size:40px}
+      .km-cols{grid-template-columns:1fr}
+      .km-facts{grid-template-columns:1fr 1fr;margin:14px}
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <section class="km-hero" aria-labelledby="heroTitle">
+    <img class="km-bg parallax" src="2415.jpg" alt="Kevin Makro — beyaz AMG önünde" />
+    <div class="km-overlay"></div>
+    <div class="km-smoke"></div>
+    <div class="km-redline"></div>
+
+    <div class="km-hero-inner">
+      <div class="km-badge"><strong>GANG BOSS — REDLINE</strong></div>
+      <h1 id="heroTitle" class="km-title">KEVIN <span>MAKRO</span></h1>
+      <p class="km-lead">Sirenlerin kestiği bir çocukluk… O geceden beri <strong>sadakat</strong> kutsal, <strong>ihanet</strong> ölümcül. Şehir onun sahnesi; hız, onun dili.</p>
+      <a href="#kevin-hikaye" class="km-cta">Hikâyeyi Oku</a>
+      <a href="https://discord.gg/SENIN-LINKIN" class="km-cta">Discord’a Katıl</a>
+
+      <!-- Ziyaretçi sayacı -->
+      <div style="margin-top:20px;font-size:14px;color:#9fb0cd">
+        👀 Bu site
+        <img src="https://hits.sh/kevinmkr1.github.io.svg?style=for-the-badge&label=ziyaret&color=1b2033&labelColor=111217" alt="ziyaretçi sayacı"/>
+        kez görüntülendi.
+      </div>
+    </div>
+  </section>
+
+  <!-- HİKÂYE -->
+  <div id="kevin-hikaye" class="km-content container" aria-label="Kevin Makro hikâye bölümü">
+    <div class="km-cols">
+      <article class="km-story card">
+        <h3>Gang Boss’un Doğuşu</h3>
+        <p>Gece çöktüğünde beyaz AMG'nin farları tozu yaran bir bıçak gibi yolu yarar. Maskenin ardında kalan gözler,
+        yıllar önce siren sesleriyle parçalanan bir çocukluğun izlerini taşır. <strong>Kevin Makro</strong>, polislerin
+        ellerinde ailesini kaybettiği gecede doğdu; nefesi öfkeden, pusulası sadakatten yapılmıştı.</p>
+        <p>Sokaklar ona para kazanmayı, hayatta kalmayı değil; <em>insanları okumayı</em> öğretti. Karizmasıyla dağılan
+        küçük ekipleri birleştirdi, sözünü tutanları kolladı, ihaneti ezdi. Adı fısıltıyla dolaşır; kimileri gangster der,
+        kimileri <em>kendi adaletini koyan kral</em>.</p>
+        <blockquote>“Ailem gitti… ama bu şehir artık benim.”</blockquote>
+        <div class="sep"></div>
+        <h3>REDLINE’ın Doğuşu</h3>
+        <p>Kevin’in yalnız öfkesi, sokakların en sadık ekibiyle birleşti ve ortaya <strong>REDLINE</strong> çıktı.
+        Adını asfaltı yaran kırmızı izlerden alan çete; hız, disiplin ve ölümüne sadakati aynı çizgide toplar.</p>
+        <p>Onlar için hız özgürlüktür, ihanet ise son duraktır. REDLINE geçerken geriye duman, far ışıkları ve korku kalır.</p>
+      </article>
+
+      <aside class="km-side" aria-label="Görseller">
+        <div class="km-card">
+          <img src="2515.jpg" loading="lazy" alt="Kevin ve araç — hız ve güç"/>
+          <div class="km-caption">Hız ve güç onun dili; arabalar ve motorlar özgürlüğün sembolü.</div>
+        </div>
+        <div class="km-card">
+          <img src="2414.jpg" loading="lazy" alt="Kevin ve ekip — sadakat"/>
+          <div class="km-caption">Yalnız yürümez: ekibi ailesidir; ihanet cezasız kalmaz.</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- KISA ÖZET KUTULARI -->
+  <div class="km-facts" aria-label="Özet Bilgiler">
+    <div class="fact"><span>İmza</span>Beyaz maske, siyah-beyaz stil</div>
+    <div class="fact"><span>Kurallar</span>Sadakat; ihanet yok</div>
+    <div class="fact"><span>Takıntı</span>Gece sürüşleri, soğuk planlar</div>
+    <div class="fact"><span>Çete</span>REDLINE — hız, sadakat, ölümüne savaş</div>
+  </div>
+
+  <script>
+    // fade-in animasyonu
+    (function(){
+      const els = document.querySelectorAll('.card, .km-card, .fact');
+      els.forEach(el=>{
+        el.style.opacity=0; el.style.transform='translateY(8px)';
+        el.style.transition='opacity .6s ease, transform .6s ease';
+      });
+      const io = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.style.opacity=1; e.target.style.transform='translateY(0)';
+            io.unobserve(e.target);
+          }
+        });
+      }, {threshold:.12});
+      els.forEach(el=> io.observe(el));
+    })();
+
+    // parallax hero background
+    (function(){
+      const bg = document.querySelector('.km-bg');
+      if(!bg) return;
+      let ticking=false;
+      function onScroll(){
+        if(ticking) return;
+        ticking=true;
+        requestAnimationFrame(()=>{
+          const y = window.scrollY || document.documentElement.scrollTop || 0;
+          const off = Math.min(20, y*0.06);
+          bg.style.transform = `translateY(${off}px) scale(1.06)`;
+          ticking=false;
+        });
+      }
+      window.addEventListener('scroll', onScroll, {passive:true});
+    })();
+  </script>
+</body>
+</html>
