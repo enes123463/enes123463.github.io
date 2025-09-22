@@ -182,30 +182,36 @@
     <div class="fact"><span>Çete</span>REDLINE — hız, sadakat, ölümüne savaş</div>
   </section>
 
-  <!-- 🎶 ARKA PLAN MÜZİĞİ (autoplay) -->
-  <audio id="bg-music" autoplay loop preload="auto" playsinline>
-    <source src="muzik.mp3" type="audio/mpeg">
-    Tarayıcınız bu ses formatını desteklemiyor.
-  </audio>
-  <button id="music-toggle">🔇</button>
+  <!-- 🎶 Arka plan müziği (direkt çal) -->
+<audio id="bg-music" src="muzik.mp3" autoplay loop preload="auto" playsinline></audio>
+<script>
+  (function () {
+    const a = document.getElementById('bg-music');
+    a.volume = 0.6;        // ses seviyesi
 
-  <script>
-  (function(){
-    const audio = document.getElementById('bg-music');
-    const btn = document.getElementById('music-toggle');
+    // sayfa açılır açılmaz çalmayı dene
+    a.play().catch(() => {
+      // tarayıcı engellerse: ilk etkileşimde otomatik başlat
+      const start = () => { a.play().catch(()=>{}); cleanup(); };
+      const cleanup = () => {
+        window.removeEventListener('pointerdown', start);
+        window.removeEventListener('touchstart', start);
+        window.removeEventListener('wheel', start);
+        window.removeEventListener('keydown', start);
+      };
+      window.addEventListener('pointerdown', start, { once: true });
+      window.addEventListener('touchstart', start, { once: true });
+      window.addEventListener('wheel', start, { once: true });
+      window.addEventListener('keydown', start, { once: true });
+    });
 
-    // Sessiz başlayalım; sonra unmute deneyeceğiz.
-    audio.muted = true;
+    // sekmeye geri dönünce tekrar çal
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && a.paused) a.play().catch(()=>{});
+    });
+  })();
+</script>
 
-    function updateBtn(){
-      btn.textContent = (audio.paused || audio.muted) ? '🔇' : '🔊';
-    }
-    function tryUnmute(){
-      audio.muted = false;
-      audio.volume = 0.5;
-      audio.play().catch(()=>{ /* engellendiyse sessiz kalır */ });
-      updateBtn();
-    }
 
     // Otomatik dene
     audio.play().then(()=> setTimeout(tryUnmute, 800)).catch(()=>{});
@@ -238,3 +244,4 @@
 
 </body>
 </html>
+
