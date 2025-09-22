@@ -1,0 +1,30 @@
+  <!-- ÖZET -->
+  <div class="km-facts">
+    <div class="fact"><span>İmza</span>Beyaz maske</div>
+    <div class="fact"><span>Kurallar</span>Sadakat; ihanet yok</div>
+    <div class="fact"><span>Takıntı</span>Gece sürüşleri</div>
+    <div class="fact"><span>Çete</span>REDLINE</div>
+  </div>
+
+  <!-- 🎶 ARKA PLAN MÜZİĞİ -->
+  <audio id="bg-music" autoplay loop>
+    <source src="muzik.mp3" type="audio/mpeg">
+    Tarayıcınız bu ses formatını desteklemiyor.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    // İlk başta sessiz başlat
+    audio.muted = true; 
+    audio.play().then(() => {
+      // 1 saniye sonra sesi aç
+      setTimeout(() => {
+        audio.muted = false;
+        audio.volume = 0.5; // %50 ses seviyesi
+      }, 1000);
+    }).catch(err => {
+      console.log("Otomatik müzik tarayıcı tarafından engellendi:", err);
+    });
+  </script>
+</body>
+</html>
