@@ -74,9 +74,45 @@
       .km-cols{grid-template-columns:1fr}
       .km-facts{grid-template-columns:1fr 1fr;margin:14px}
     }
+
+    /* === Neon REDLINE etkisi (başlıktaki kırmızı span) === */
+    @keyframes neon-pulse {
+      0%,100% { text-shadow: 0 0 6px #ff3b3b, 0 0 14px rgba(255,59,59,.45); }
+      50%     { text-shadow: 0 0 14px #ff3b3b, 0 0 28px rgba(255,59,59,.55); }
+    }
+    .km-title span{ animation: neon-pulse 1.6s infinite ease-in-out; }
+
+    /* === Arka plan efekt: yağmur/neo-çizgi === */
+    .fx-rain{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: .25;
+      background:
+        repeating-linear-gradient(
+          120deg,
+          rgba(255,255,255,.06) 0px,
+          rgba(255,255,255,.06) 2px,
+          transparent 2px,
+          transparent 10px
+        );
+      animation: rainMove 1.2s linear infinite;
+      mix-blend-mode: screen;
+    }
+    @keyframes rainMove {
+      from { background-position: 0 0; }
+      to   { background-position: 120px 240px; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .fx-rain{ animation: none; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Arka plan efekt katmanı -->
+  <div class="fx-rain" aria-hidden="true"></div>
 
   <!-- HERO -->
   <section class="km-hero" aria-labelledby="heroTitle">
@@ -176,8 +212,40 @@
     <div class="fact"><span>Çete</span>REDLINE — hız, sadakat, ölümüne savaş</div>
   </section>
 
+  <!-- 💬 YORUMLAR -->
+  <section id="comments" class="container" style="margin-top:24px">
+    <h2 style="margin:0 0 10px;font-size:22px">Yorumlar</h2>
+    <p style="color:#9aa5b5;margin:0 0 12px">Görüşünü bırak: GitHub hesabı ile giriş yapılır.</p>
+    <script src="https://utteranc.es/client.js"
+            repo="kevinmkr1/kevinmkr1.github.io"
+            issue-term="pathname"
+            label="💬 comment"
+            theme="github-dark"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </section>
+
+  <!-- 🎶 ARKA PLAN MÜZİĞİ -->
+  <audio id="bg-music" autoplay loop>
+    <source src="muzik.mp3" type="audio/mpeg">
+    Tarayıcınız bu ses formatını desteklemiyor.
+  </audio>
+  <script>
+    (function(){
+      const audio = document.getElementById('bg-music');
+      // İlk başta sessiz başlat, sonra açmayı dene
+      audio.muted = true;
+      audio.play().then(() => {
+        setTimeout(() => {
+          audio.muted = false;
+          audio.volume = 0.5;
+        }, 1000);
+      }).catch(err => {
+        console.log("Otomatik müzik tarayıcı tarafından engellendi:", err);
+      });
+    })();
+  </script>
+
 </body>
 </html>
-
-
-
