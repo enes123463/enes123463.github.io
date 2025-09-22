@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KEVIN &   REDLINE</title>
-  <meta name="description" content="KEVINMKR &  — REDLINE. Biyografi, ekip hikâyesi ve görseller.">
-  <meta property="og:title" content="KEVIN &  — REDLINE">
+  <title>KEVIN & REDLINE</title>
+  <meta name="description" content="KEVINMKR & — REDLINE. Biyografi, ekip hikâyesi ve görseller.">
+  <meta property="og:title" content="KEVIN & — REDLINE">
   <meta property="og:description" content="Sirenlerin kestiği çocukluk, çelik sadakat. REDLINE'ın doğuşu.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="2415.jpg">
@@ -17,11 +17,8 @@
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-
     a{color:#cbd6ff;text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:20px}
-
-    /* ========== HERO (arka planlı başlık) ========== */
     .km-hero{position:relative;height:60vh;min-height:420px;overflow:hidden;
       border-radius:18px;margin:16px 20px;background:#0b0c10}
     .km-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
@@ -39,80 +36,13 @@
     .km-title{font-size:54px;line-height:1;margin:10px 0 6px;text-shadow:0 10px 30px rgba(0,0,0,.45)}
     .km-title span{color:var(--accent)}
     .km-lead{color:#b9c6dc;max-width:720px}
-
-    /* ========== YAN YANA DISCORD KARTLARI ========== */
-    .cards-wrapper{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:24px auto}
-    .discord-card{background:#111217;border:1px solid var(--line);border-radius:16px;
-      width:360px;text-align:center;padding:22px}
-    .discord-card img{width:90px;height:90px;border-radius:50%;
-      border:3px solid var(--pri);object-fit:cover;margin-top:6px}
-    .discord-card h2{margin:12px 0 4px;font-size:22px}
-    .discord-card p{margin:0;font-size:14px;color:#9aa5b5}
-    .discord-card .bio{margin:10px 0 2px;color:#b9c6dc;font-size:13px}
-    .discord-card a.btn{display:inline-block;margin-top:12px;padding:10px 18px;
-      background:#4f46e5;color:#fff;border-radius:999px;font-size:14px}
-    .counter{margin-top:10px;font-size:13px;color:#9fb0cd}
-
-    /* ========== KARTLAR ALTINDA İKİ HİKÂYE ========== */
-    .story{max-width:1100px;margin:18px auto;padding:20px 24px;background:#111217;border:1px solid var(--line);border-radius:16px}
-    .story h3{margin:0 0 10px;color:var(--accent)}
-    .story blockquote{margin:10px 0 0;padding-left:12px;border-left:3px solid var(--pri);color:#b9c6dc}
-
-    /* ========== SİNEMATİK KEVIN BÖLÜMÜ (önceki) ========== */
-    .km-cols{display:grid;grid-template-columns:1.3fr .9fr;gap:16px}
-    .card{background:#111217;border:1px solid var(--line);border-radius:16px;padding:16px}
-    .km-side{display:grid;gap:12px}
-    .km-card{background:#0f1320;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-    .km-card img{width:100%;height:220px;object-fit:cover;display:block}
-    .km-caption{font-size:12px;color:#9fb0cd;padding:10px}
-    .km-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 20px}
-    .km-facts .fact{background:#0f1320;border:1px solid var(--line);border-radius:12px;padding:12px;color:#cfd6e6}
-    .km-facts .fact span{display:block;color:#8ea0b8;font-size:12px;margin-bottom:4px}
-
-    @media (max-width:900px){
-      .km-title{font-size:38px}
-      .km-cols{grid-template-columns:1fr}
-      .km-facts{grid-template-columns:1fr 1fr;margin:14px}
-    }
-
-    /* === Neon REDLINE etkisi (başlıktaki kırmızı span) === */
-    @keyframes neon-pulse {
-      0%,100% { text-shadow: 0 0 6px #ff3b3b, 0 0 14px rgba(255,59,59,.45); }
-      50%     { text-shadow: 0 0 14px #ff3b3b, 0 0 28px rgba(255,59,59,.55); }
-    }
-    .km-title span{ animation: neon-pulse 1.6s infinite ease-in-out; }
-
-    /* === Arka plan efekt: yağmur/neo-çizgi === */
-    .fx-rain{
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-      opacity: .25;
-      background:
-        repeating-linear-gradient(
-          120deg,
-          rgba(255,255,255,.06) 0px,
-          rgba(255,255,255,.06) 2px,
-          transparent 2px,
-          transparent 10px
-        );
-      animation: rainMove 1.2s linear infinite;
-      mix-blend-mode: screen;
-    }
-    @keyframes rainMove {
-      from { background-position: 0 0; }
-      to   { background-position: 120px 240px; }
-    }
-    @media (prefers-reduced-motion: reduce){
-      .fx-rain{ animation: none; }
-    }
+    /* buton */
+    #music-toggle{position:fixed;right:12px;bottom:12px;z-index:50;
+      border:none;border-radius:999px;padding:10px 12px;
+      background:#4f46e5;color:#fff;font-size:16px;cursor:pointer}
   </style>
 </head>
 <body>
-
-  <!-- Arka plan efekt katmanı -->
-  <div class="fx-rain" aria-hidden="true"></div>
 
   <!-- HERO -->
   <section class="km-hero" aria-labelledby="heroTitle">
@@ -121,132 +51,52 @@
     <div class="km-redline"></div>
     <div class="km-hero-inner">
       <div class="km-badge"><strong>REDLINE EVRENİ</strong></div>
-      <h1 id="heroTitle" class="km-title">KEVIN <span>MAKRO</span> &  <span></span></h1>
+      <h1 id="heroTitle" class="km-title">KEVIN <span>MAKRO</span><span></span></h1>
       <p class="km-lead">Sadakat kutsal, ihanet ölümcül. İki kardeş, tek çizgi: REDLINE.</p>
     </div>
   </section>
 
-  <!-- YAN YANA DISCORD KARTLARI -->
-  <section class="cards-wrapper container">
-    <!-- KEVIN -->
-    <div class="discord-card">
-      <img src="avatar.jpg" alt="KEVINMKR ">
-      <h2>KEVINMKR</h2>
-      <p>enesdmr34 • KEVIN MKR</p>
-      <p class="bio">💬 “Akıl vermeyi bırakıp biraz huzur verseniz.”</p>
-      <a class="btn" href="https://discord.gg/SENIN-LINKIN" target="_blank">🚀 Discord’a Katıl</a>
-      <div class="counter">
-        👀 Bu site
-        <img src="https://hits.sh/kevinmkr1.github.io.svg?style=flat-square&label=ziyaret&color=4f46e5&labelColor=111217"
-             alt="ziyaretçi sayacı" style="height:20px;vertical-align:middle;margin:0 4px"/>
-        kez görüntülendi.
-      </div>
-    </div>
-
-    <!-- ANDREW -->
-    <div class="discord-card">
-      <img src="avatar2.jpg" alt="ANDREW MKR ">
-      <h2>ANDREW MKR</h2>
-      <p>kumarbaz.0001 • Andrew MKR</p>
-      <p class="bio">💬 “Bize akıl verme, biz güçlüyüz.”</p>
-      <a class="btn" href="https://discord.gg/SENIN-LINKIN" target="_blank">🔥 Discord’da Gör</a>
-      <div class="counter">
-        👀 Bu site
-        <img src="https://hits.sh/kevinmkr1.github.io.svg?style=flat-square&label=ziyaret&color=ff3b3b&labelColor=111217"
-             alt="ziyaretçi sayacı" style="height:20px;vertical-align:middle;margin:0 4px"/>
-        kez görüntülendi.
-      </div>
-    </div>
-  </section>
-
-  <!-- KEVIN HİKÂYESİ -->
-  <section class="story container" id="kevin-bio">
-    <h3>Kevin’in Hikâyesi</h3>
-    <p>Kevin Makro, çocukluğunu siren sesleriyle kaybetti. Şehrin karanlık sokaklarında sadakati kutsal bildi, ihaneti ise
-      ölümle cezalandırdı. REDLINE’ın kurucusu olarak, maskesinin ardında şehri kendi kurallarına göre yöneten bir lider oldu.</p>
-    <blockquote>“Ailem gitti… ama bu şehir artık benim.”</blockquote>
-  </section>
-
-  <!-- ANDREW HİKÂYESİ -->
-  <section class="story container" id="andrew-bio">
-    <h3>Andrew’un Hikâyesi</h3>
-    <p>Andrew MKR, Kevin’in kardeşi ve en yakın yol arkadaşı. Kevin’in öfkesini dengeleyen stratejisttir; soğukkanlı
-      kararlarıyla REDLINE’ın aklıdır. Çete onu “Kumarbaz” diye çağırır; en riskli masada bile kaybedecek gibi görünür ama
-      son kartı çevirdiğinde herkes susar.</p>
-    <blockquote>“Bize akıl verme; zaten kendi yolumuzu çizdik.”</blockquote>
-  </section>
-
-  <!-- SİNEMATİK KEVIN BÖLÜMÜ (görseller + kısa kutular) -->
-  <section class="container" aria-label="Kevin Makro sinematik bölüm">
-    <div class="km-cols">
-      <article class="card">
-        <h3 style="margin:0 0 8px">Gang Boss’un Doğuşu</h3>
-        <p>Gece çöktüğünde beyaz AMG'nin farları tozu yaran bir bıçak gibi yolu yarar. Maskenin ardında kalan gözler,
-        yıllar önce siren sesleriyle parçalanan bir çocukluğun izlerini taşır. <strong>Kevin Makro</strong>, polislerin
-        ellerinde ailesini kaybettiği gecede doğdu; nefesi öfkeden, pusulası sadakatten yapılmıştı.</p>
-        <p>Sokaklar ona para kazanmayı değil; <em>insanları okumayı</em> öğretti. Karizmasıyla ekipleri topladı, sözünü
-        tutanları kolladı, ihaneti ezdi. Adı fısıltıyla dolaşır; kimileri gangster der, kimileri <em>kendi adaletini koyan kral</em>.</p>
-        <div style="height:1px;background:linear-gradient(90deg,transparent,#2a335a,transparent);margin:12px 0"></div>
-        <h3 style="margin:0 0 8px">REDLINE’ın Doğuşu</h3>
-        <p>Kevin’in yalnız öfkesi, sokakların en sadık ekibiyle birleşti ve ortaya <strong>REDLINE</strong> çıktı.
-        Adını asfaltı yaran kırmızı izlerden alan çete; hız, disiplin ve ölümüne sadakati aynı çizgide toplar.</p>
-      </article>
-
-      <aside class="km-side" aria-label="Görseller">
-        <div class="km-card">
-          <img src="2515.jpg" alt="Kevin — araç ve hız">
-          <div class="km-caption">Hız: arabalar ve motorlar özgürlük demek.</div>
-        </div>
-        <div class="km-card">
-          <img src="2414.jpg" alt="Kevin — ekip">
-          <div class="km-caption">Ekip aile gibidir; ihanet cezasız kalmaz.</div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="km-facts" aria-label="Özet Bilgiler">
-    <div class="fact"><span>İmza</span>Beyaz maske, siyah-beyaz stil</div>
-    <div class="fact"><span>Kurallar</span>Sadakat; ihanet yok</div>
-    <div class="fact"><span>Takıntı</span>Gece sürüşleri, soğuk planlar</div>
-    <div class="fact"><span>Çete</span>REDLINE — hız, sadakat, ölümüne savaş</div>
-  </section>
-
-  <!-- 💬 YORUMLAR -->
-  <section id="comments" class="container" style="margin-top:24px">
-    <h2 style="margin:0 0 10px;font-size:22px">Yorumlar</h2>
-    <p style="color:#9aa5b5;margin:0 0 12px">Görüşünü bırak: GitHub hesabı ile giriş yapılır.</p>
-    <script src="https://utteranc.es/client.js"
-            repo="kevinmkr1/kevinmkr1.github.io"
-            issue-term="pathname"
-            label="💬 comment"
-            theme="github-dark"
-            crossorigin="anonymous"
-            async>
-    </script>
-  </section>
-
   <!-- 🎶 ARKA PLAN MÜZİĞİ -->
-  <audio id="bg-music" autoplay loop>
+  <audio id="bg-music" autoplay loop preload="auto" playsinline>
     <source src="muzik.mp3" type="audio/mpeg">
     Tarayıcınız bu ses formatını desteklemiyor.
   </audio>
+  <button id="music-toggle">🔊</button>
+
   <script>
-    (function(){
-      const audio = document.getElementById('bg-music');
-      // İlk başta sessiz başlat, sonra açmayı dene
-      audio.muted = true;
-      audio.play().then(() => {
-        setTimeout(() => {
-          audio.muted = false;
-          audio.volume = 0.5;
-        }, 1000);
-      }).catch(err => {
-        console.log("Otomatik müzik tarayıcı tarafından engellendi:", err);
-      });
-    })();
+  (function(){
+    const audio = document.getElementById('bg-music');
+    const btn = document.getElementById('music-toggle');
+    audio.muted = true; // sessiz başlat
+    function updateBtn(){
+      btn.textContent = (audio.paused || audio.muted) ? '🔇' : '🔊';
+    }
+    function tryUnmute(){
+      audio.muted = false; audio.volume = 0.5;
+      audio.play().catch(()=>{}); updateBtn();
+    }
+    // otomatik açmayı dene
+    audio.play().then(()=>{ setTimeout(tryUnmute, 800); }).catch(()=>{});
+    // İlk etkileşimde sesi aç (Safari için)
+    const unlock = () => { tryUnmute(); cleanup(); };
+    function cleanup(){
+      window.removeEventListener('touchstart', unlock);
+      window.removeEventListener('pointerdown', unlock);
+      window.removeEventListener('keydown', unlock);
+    }
+    window.addEventListener('touchstart', unlock, {once:true});
+    window.addEventListener('pointerdown', unlock, {once:true});
+    window.addEventListener('keydown', unlock, {once:true});
+    // Buton kontrolü
+    btn.addEventListener('click', ()=>{
+      if(audio.paused){ audio.play().then(()=>{ audio.muted=false; updateBtn(); }); }
+      else{ audio.pause(); updateBtn(); }
+    });
+    audio.addEventListener('play', updateBtn);
+    audio.addEventListener('pause', updateBtn);
+    updateBtn();
+  })();
   </script>
 
 </body>
 </html>
-
