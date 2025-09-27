@@ -364,64 +364,9 @@
       </iframe>
     </div>
 
-    <!-- Sosyal Akış (YouTube / TikTok / Instagram) -->
-    <div class="card" style="background:#111217;border:1px solid #1b2033;border-radius:16px;padding:0;overflow:hidden">
-      <div style="padding:12px 14px;border-bottom:1px solid #1b2033">
-        <strong>Son Paylaşımlar</strong>
-      </div>
 
-      <!-- YouTube video/playlist (önerilir, hızlı yüklenir) -->
-      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden">
-        <!-- Bir video: https://www.youtube.com/watch?v=VIDEO_ID -->
-        <!-- Playlist istersen: https://www.youtube.com/embed/videoseries?list=PLAYLIST_ID -->
-        <iframe
-          src="https://www.youtube.com/embed/VIDEO_ID?rel=0"
-          title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          style="position:absolute;top:0;left:0;width:100%;height:100%">
-        </iframe>
-      </div>
-
-      <!-- TikTok (opsiyonel) -->
-      <div style="padding:12px">
-        <!-- TikTok gönderi URL’ni ‘cite’ içine koy -->
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@KULLANICI/video/VIDEO_ID" data-video-id="VIDEO_ID" style="max-width: 100%; min-width: 300px; margin:0 auto">
-          <section> </section>
-        </blockquote>
-      </div>
-    </div>
-  </div>
-
-  <!-- Yorumlar (Disqus) -->
-  <div class="card" style="background:#111217;border:1px solid #1b2033;border-radius:16px;margin-top:16px">
-    <div style="padding:12px 14px;border-bottom:1px solid #1b2033">
-      <strong>Yorumlar</strong> <span style="color:#9aa5b5;font-size:13px">— düşünceni yaz</span>
-    </div>
-    <div id="disqus_thread" style="padding:14px"></div>
-  </div>
-</section>
-
-<!-- TikTok embed script (gerekliyse) -->
-<script async src="https://www.tiktok.com/embed.js"></script>
-
-<!-- Disqus (GitHub Pages ile uyumlu) -->
-<script>
-  // Disqus kullanım notu:
-  // 1) https://disqus.com/ adresinden site oluştur.
-  // 2) "shortname" değerini aşağıya yaz.
-  var disqus_config = function () {
-    this.page.url = window.location.href;
-    this.page.identifier = 'kevin-redline-home';
-  };
-  (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://SHORTNAME.disqus.com/embed.js';  // <-- SHORTNAME'i değiştir
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-</script>
-<!-- ===== /SOSYAL & TOPLULUK ===== -->
 </body>
 </html>
+
 
 
