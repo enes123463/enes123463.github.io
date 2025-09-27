@@ -294,7 +294,53 @@
     });
   })();
 
-    <!-- ===== SOSYAL & TOPLULUK (ek) ===== -->
+   
+
+
+  // Müzik: otomatik çal + engellenirse ilk etkileşimde başlat
+  (function () {
+    const a = document.getElementById('bg-music');
+    if (!a) return;
+    a.volume = 0.6;
+    a.play().catch(() => {
+      const start = () => { a.play().catch(()=>{}); cleanup(); };
+      function cleanup(){
+        window.removeEventListener('pointerdown', start);
+        window.removeEventListener('touchstart', start);
+        window.removeEventListener('wheel', start);
+        window.removeEventListener('keydown', start);
+      }
+      window.addEventListener('pointerdown', start, { once: true });
+      window.addEventListener('touchstart', start, { once: true });
+      window.addEventListener('wheel', start, { once: true });
+      window.addEventListener('keydown', start, { once: true });
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && a.paused) a.play().catch(()=>{});
+    });
+  })();
+
+  // Galeri lightbox
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const close = lb.querySelector('.lb-close');
+
+    document.querySelectorAll('.gallery-grid img').forEach(img=>{
+      img.addEventListener('click',()=>{
+        lbImg.src = img.src;
+        lbImg.alt = img.alt || '';
+        lb.classList.remove('hidden');
+      });
+    });
+
+    const hide=()=>lb.classList.add('hidden');
+    close.addEventListener('click',hide);
+    lb.addEventListener('click',(e)=>{ if(e.target===lb) hide(); });
+    window.addEventListener('keydown',(e)=>{ if(e.key==='Escape') hide(); });
+  })();
+  </script>
+ <!-- ===== SOSYAL & TOPLULUK (ek) ===== -->
 <section id="topluluk" class="container" aria-labelledby="toplulukTitle" style="margin-top:24px">
   <h2 id="toplulukTitle" style="margin:0 0 10px;color:#ff3b3b">Sosyal & Topluluk</h2>
   <p style="color:#9aa5b5;margin:0 0 14px">Discord’da buluşalım, son paylaşımları izle, yorumunu bırak.</p>
@@ -375,52 +421,6 @@
   })();
 </script>
 <!-- ===== /SOSYAL & TOPLULUK ===== -->
-
-
-  // Müzik: otomatik çal + engellenirse ilk etkileşimde başlat
-  (function () {
-    const a = document.getElementById('bg-music');
-    if (!a) return;
-    a.volume = 0.6;
-    a.play().catch(() => {
-      const start = () => { a.play().catch(()=>{}); cleanup(); };
-      function cleanup(){
-        window.removeEventListener('pointerdown', start);
-        window.removeEventListener('touchstart', start);
-        window.removeEventListener('wheel', start);
-        window.removeEventListener('keydown', start);
-      }
-      window.addEventListener('pointerdown', start, { once: true });
-      window.addEventListener('touchstart', start, { once: true });
-      window.addEventListener('wheel', start, { once: true });
-      window.addEventListener('keydown', start, { once: true });
-    });
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden && a.paused) a.play().catch(()=>{});
-    });
-  })();
-
-  // Galeri lightbox
-  (function(){
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lb-img');
-    const close = lb.querySelector('.lb-close');
-
-    document.querySelectorAll('.gallery-grid img').forEach(img=>{
-      img.addEventListener('click',()=>{
-        lbImg.src = img.src;
-        lbImg.alt = img.alt || '';
-        lb.classList.remove('hidden');
-      });
-    });
-
-    const hide=()=>lb.classList.add('hidden');
-    close.addEventListener('click',hide);
-    lb.addEventListener('click',(e)=>{ if(e.target===lb) hide(); });
-    window.addEventListener('keydown',(e)=>{ if(e.key==='Escape') hide(); });
-  })();
-  </script>
-
 </body>
 </html>
 
