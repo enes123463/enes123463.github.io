@@ -70,193 +70,38 @@
     .km-facts .fact{background:#0f1320;border:1px solid var(--line);border-radius:12px;padding:12px;color:#cfd6e6}
     .km-facts .fact span{display:block;color:#8ea0b8;font-size:12px;margin-bottom:4px}
 
-    /* Müzik butonu (görünmez; otomatik çalım için gerekli değil ama istersen gösterebilirsin)
-       #music-toggle{position:fixed;right:12px;bottom:12px;z-index:50;border:none;border-radius:999px;padding:10px 12px;background:#4f46e5;color:#fff;font-size:16px;cursor:pointer} */
-
     @media (max-width:900px){
       .km-title{font-size:38px}
       .km-cols{grid-template-columns:1fr}
       .km-facts{grid-template-columns:1fr 1fr;margin:14px}
     }
 
-    /* ====== EKLEMELER: NEON + HOVER + GLOW LINE + STATS + KODEKS ====== */
-    .neon {
-      text-shadow:
-        0 0 6px rgba(255,59,59,.55),
-        0 0 16px rgba(255,59,59,.45),
-        0 0 28px rgba(255,59,59,.35);
-      animation: neonPulse 2.2s ease-in-out infinite;
-    }
-    @keyframes neonPulse { 0%,100%{filter:brightness(1)} 50%{filter:brightness(1.25)} }
-    .km-title span{ text-shadow:0 0 12px rgba(255,59,59,.45),0 0 22px rgba(255,59,59,.25) }
+    /* Neon, hover, stats, kodeks zaten var */
 
-    .discord-card,.card,.km-card{
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-    }
-    .discord-card:hover,.card:hover,.km-card:hover{
-      transform: translateY(-6px);
-      box-shadow: 0 10px 28px rgba(79,70,229,.18), 0 2px 0 1px rgba(255,59,59,.18) inset;
-      border-color:#2a3a7a;
-    }
-
-    .glow-line{
-      height:2px;background:linear-gradient(90deg,transparent,#ff3b3b,transparent);
-      filter:drop-shadow(0 0 7px rgba(255,59,59,.6));animation:sweep 3.5s linear infinite;margin:0 20px;
-      border-radius:2px;
-    }
-    @keyframes sweep{0%{opacity:.35}50%{opacity:.9}100%{opacity:.35}}
-
-    .stats{
-      max-width:1100px;margin:22px auto;padding:16px 20px;display:grid;gap:14px;grid-template-columns:repeat(4,1fr);
-    }
-    .stat{
-      background:#111217;border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center;
-    }
-    .stat .num{font-size:28px;font-weight:800;letter-spacing:.5px}
-    .stat .label{color:#9aa5b5;font-size:13px}
-
-    .kodex{max-width:1100px;margin:24px auto;padding:20px;background:#111217;border:1px solid var(--line);border-radius:16px}
-    .kodex h3{margin:0 0 10px;color:var(--accent)}
-    .kodex-grid{display:grid;gap:12px;grid-template-columns:repeat(4,1fr)}
-    .rule{background:#0f1320;border:1px solid var(--line);border-radius:14px;padding:14px}
-    .rule b{display:block;margin-bottom:6px}
+    /* === GALERİ === */
+    .gallery{max-width:1100px;margin:24px auto;padding:0 20px}
+    .gallery h3{margin:0 0 12px;color:var(--accent)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
+    .g{position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--line);background:#0f1320}
+    .g img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+    .g:hover img{transform:scale(1.05)}
+    .g.s{grid-column:span 4;height:180px}
+    .g.m{grid-column:span 6;height:220px}
+    .g.l{grid-column:span 8;height:260px}
     @media (max-width:900px){
-      .stats{grid-template-columns:1fr 1fr}
-      .kodex-grid{grid-template-columns:1fr 1fr}
+      .g.s,.g.m,.g.l{grid-column:span 12;height:220px}
     }
+    /* === LIGHTBOX === */
+    .lb{position:fixed;inset:0;background:rgba(0,0,0,.78);display:flex;align-items:center;justify-content:center;z-index:999}
+    .lb.hidden{display:none}
+    .lb img{max-width:min(92vw,1200px);max-height:88vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.55)}
+    .lb-close{position:absolute;top:18px;right:18px;font-size:28px;line-height:1;padding:8px 12px;border-radius:10px;border:1px solid #2b2f44;background:#111217;color:#fff;cursor:pointer}
   </style>
 </head>
 <body>
 
   <!-- HERO -->
-  <section class="km-hero" aria-labelledby="heroTitle">
-    <img class="km-bg" src="2415.jpg" alt="Kevin Makro — beyaz AMG önünde" />
-    <div class="km-overlay"></div>
-    <div class="km-redline"></div>
-    <div class="km-hero-inner">
-      <div class="km-badge"><strong>REDLINE EVRENİ</strong></div>
-      <h1 id="heroTitle" class="km-title neon">KEVIN <span>MAKRO</span><span></span></h1>
-      <p class="km-lead">Sadakat kutsal, ihanet ölümcül. İki kardeş, tek çizgi: REDLINE.</p>
-    </div>
-  </section>
-
-  <!-- İnce neon çizgi -->
-  <div class="glow-line"></div>
-
-  <!-- YAN YANA DISCORD KARTLARI -->
-  <section class="cards-wrapper container">
-    <!-- KEVIN -->
-    <div class="discord-card">
-      <img src="avatar.jpg" alt="KEVINMKR">
-      <h2>KEVINMKR</h2>
-      <p>enesdmr34 • KEVIN MKR</p>
-      <p class="bio">💬 “Akıl vermeyi bırakıp biraz huzur verseniz.”</p>
-      <a class="btn" href="https://discord.gg/SENIN-LINKIN" target="_blank">🚀 Discord’a Katıl</a>
-      <div class="counter">
-        👀 Bu site
-        <img src="https://hits.sh/kevinmkr1.github.io.svg?style=flat-square&label=ziyaret&color=4f46e5&labelColor=111217"
-             alt="ziyaretçi sayacı" style="height:20px;vertical-align:middle;margin:0 4px"/>
-        kez görüntülendi.
-      </div>
-    </div>
-
-    <!-- ANDREW -->
-    <div class="discord-card">
-      <img src="avatar2.jpg" alt="ANDREW MKR">
-      <h2>ANDREW MKR</h2>
-      <p>kumarbaz.0001 • Andrew MKR</p>
-      <p class="bio">💬 “Bize akıl verme, biz güçlüyüz.”</p>
-      <a class="btn" href="https://discord.gg/SENIN-LINKIN" target="_blank">🔥 Discord’da Gör</a>
-      <div class="counter">
-        👀 Bu site
-        <img src="https://hits.sh/kevinmkr1.github.io.svg?style=flat-square&label=ziyaret&color=ff3b3b&labelColor=111217"
-             alt="ziyaretçi sayacı" style="height:20px;vertical-align:middle;margin:0 4px"/>
-        kez görüntülendi.
-      </div>
-    </div>
-  </section>
-
-  <!-- İSTATİSTİKLER -->
-  <section class="stats container" aria-label="İstatistikler">
-    <div class="stat">
-      <div class="num" data-target="1250">0</div>
-      <div class="label">Toplam Takipçi</div>
-    </div>
-    <div class="stat">
-      <div class="num" data-target="312">0</div>
-      <div class="label">Aktif Oyuncu</div>
-    </div>
-    <div class="stat">
-      <div class="num" data-target="48">0</div>
-      <div class="label">Etkinlik</div>
-    </div>
-    <div class="stat">
-      <img src="https://hits.sh/kevinmkr1.github.io.svg?style=flat-square&label=ziyaret&color=4f46e5&labelColor=111217"
-           alt="ziyaretçi" style="height:22px;vertical-align:middle;margin-top:4px">
-      <div class="label">Ziyaret</div>
-    </div>
-  </section>
-
-  <!-- KEVIN HİKÂYESİ -->
-  <section class="story container" id="kevin-bio">
-    <h3>Kevin’in Hikâyesi</h3>
-    <p>Kevin Makro, çocukluğunu siren sesleriyle kaybetti. Şehrin karanlık sokaklarında sadakati kutsal bildi, ihaneti ise
-      ölümle cezalandırdı. REDLINE’ın kurucusu olarak, maskesinin ardında şehri kendi kurallarına göre yöneten bir lider oldu.</p>
-    <blockquote>“Ailem gitti… ama bu şehir artık benim.”</blockquote>
-  </section>
-
-  <!-- ANDREW HİKÂYESİ -->
-  <section class="story container" id="andrew-bio">
-    <h3>Andrew’un Hikâyesi</h3>
-    <p>Andrew MKR, Kevin’in kardeşi ve en yakın yol arkadaşı. Kevin’in öfkesini dengeleyen stratejisttir; soğukkanlı
-      kararlarıyla REDLINE’ın aklıdır. Çete onu “Kumarbaz” diye çağırır; en riskli masada bile kaybedecek gibi görünür ama
-      son kartı çevirdiğinde herkes susar.</p>
-    <blockquote>“Bize akıl verme; zaten kendi yolumuzu çizdik.”</blockquote>
-  </section>
-
-  <!-- REDLINE KODEKS -->
-  <section class="kodex container" aria-label="REDLINE Kodeks">
-    <h3>REDLINE Kodeks (Kurallar)</h3>
-    <div class="kodex-grid">
-      <div class="rule"><b>⚡ Hız</b> Şehir bizim pistimiz. Risk hesaplı alınır.</div>
-      <div class="rule"><b>🛡️ Sadakat</b> Aileye ihanet yok; ihanetin bedeli ağırdır.</div>
-      <div class="rule"><b>🤝 Saygı</b> Ekip içi hiyerarşi ve karar kitaptır.</div>
-      <div class="rule"><b>🕶️ Gizlilik</b> Konuşulmaz, gösterilir. Bilgi güçtür.</div>
-      <div class="rule"><b>🔧 Hazırlık</b> Plan yapılır, alternatif her zaman hazırdır.</div>
-      <div class="rule"><b>🎯 Odak</b> Duygu değil, sonuç konuşur.</div>
-      <div class="rule"><b>💬 Sessizlik</b> Gereksiz drama REDLINE’dan uzaktır.</div>
-      <div class="rule"><b>♻️ İrade</b> Kaybetsek de çizgimizi bozmayız.</div>
-    </div>
-  </section>
-
-  <!-- SİNEMATİK KEVIN (görseller) -->
-  <section class="container" aria-label="Kevin Makro sinematik bölüm">
-    <div class="km-cols">
-      <article class="card">
-        <h3 style="margin:0 0 8px">Gang Boss’un Doğuşu</h3>
-        <p>Gece çöktüğünde beyaz AMG'nin farları tozu yaran bir bıçak gibi yolu yarar. Maskenin ardında kalan gözler,
-        yıllar önce siren sesleriyle parçalanan bir çocukluğun izlerini taşır. <strong>Kevin Makro</strong>, polislerin
-        ellerinde ailesini kaybettiği gecede doğdu; nefesi öfkeden, pusulası sadakatten yapılmıştı.</p>
-        <p>Sokaklar ona para kazanmayı değil; <em>insanları okumayı</em> öğretti. Karizmasıyla ekipleri topladı, sözünü
-        tutanları kolladı, ihaneti ezdi. Adı fısıltıyla dolaşır; kimileri gangster der, kimileri <em>kendi adaletini koyan kral</em>.</p>
-        <div style="height:1px;background:linear-gradient(90deg,transparent,#2a335a,transparent);margin:12px 0"></div>
-        <h3 style="margin:0 0 8px">REDLINE’ın Doğuşu</h3>
-        <p>Kevin’in yalnız öfkesi, sokakların en sadık ekibiyle birleşti ve ortaya <strong>REDLINE</strong> çıktı.
-        Adını asfaltı yaran kırmızı izlerden alan çete; hız, disiplin ve ölümüne sadakati aynı çizgide toplar.</p>
-      </article>
-
-      <aside class="km-side" aria-label="Görseller">
-        <div class="km-card">
-          <img src="2515.jpg" alt="Kevin — araç ve hız">
-          <div class="km-caption">Hız: arabalar ve motorlar özgürlük demek.</div>
-        </div>
-        <div class="km-card">
-          <img src="2414.jpg" alt="Kevin — ekip">
-          <div class="km-caption">Ekip aile gibidir; ihanet cezasız kalmaz.</div>
-        </div>
-      </aside>
-    </div>
-  </section>
+  ... (senin mevcut kodların burada aynı şekilde) ...
 
   <!-- ÖZET -->
   <section class="km-facts" aria-label="Özet Bilgiler">
@@ -266,54 +111,56 @@
     <div class="fact"><span>Çete</span>REDLINE — hız, sadakat, ölümüne savaş</div>
   </section>
 
+  <!-- GALERİ -->
+  <section class="gallery" aria-label="REDLINE galeri">
+    <h3>Galeri</h3>
+    <div class="gallery-grid">
+      <figure class="g l"><img src="image.png"  alt="Duvar önünde ekran ve Kevin"/></figure>
+      <figure class="g m"><img src="2412.jpg"   alt="Gece, beyaz S2000 ve Kevin"/></figure>
+      <figure class="g s"><img src="image5.png" alt="Kevin & Andrew yan yana"/></figure>
+      <figure class="g s"><img src="image4.png" alt="Kevin villada tam boy"/></figure>
+      <figure class="g m"><img src="image1.png" alt="Gri sweatshirt portre"/></figure>
+      <figure class="g m"><img src="image6.png" alt="Motorsiklet üzerinde ikili sürüş"/></figure>
+      <figure class="g l"><img src="image2.png" alt="Kalabalık takım elbiseli topluluk"/></figure>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lb hidden" role="dialog" aria-label="Büyük görsel">
+      <button class="lb-close" aria-label="Kapat">✕</button>
+      <img id="lb-img" alt="">
+    </div>
+  </section>
+
   <!-- 🎶 Arka plan müziği (direkt çal) -->
   <audio id="bg-music" src="muzik.mp3" autoplay loop preload="auto" playsinline></audio>
 
-  <!-- Sayaç animasyonu + müzik fallback -->
+  <!-- Scriptler -->
   <script>
   // İstatistik sayaçları
-  (function(){
-    const elms = document.querySelectorAll('.stat .num[data-target]');
-    const ease = t => 1 - Math.pow(1 - t, 3);
-    elms.forEach(el=>{
-      const target = parseInt(el.dataset.target,10) || 0;
-      const start = 0;
-      const duration = 1200 + Math.random()*600;
-      let t0 = null;
-      function step(ts){
-        if (!t0) t0 = ts;
-        const p = Math.min(1, (ts - t0)/duration);
-        const val = Math.floor(start + (target-start)*ease(p));
-        el.textContent = val.toLocaleString('tr-TR');
-        if (p < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    });
-  })();
+  ... (senin mevcut sayaç kodun) ...
 
-  // Müzik: otomatik çal + engellenirse ilk etkileşimde başlat
-  (function () {
-    const a = document.getElementById('bg-music');
-    if (!a) return;
-    a.volume = 0.6;
-    a.play().catch(() => {
-      const start = () => { a.play().catch(()=>{}); cleanup(); };
-      function cleanup(){
-        window.removeEventListener('pointerdown', start);
-        window.removeEventListener('touchstart', start);
-        window.removeEventListener('wheel', start);
-        window.removeEventListener('keydown', start);
-      }
-      window.addEventListener('pointerdown', start, { once: true });
-      window.addEventListener('touchstart', start, { once: true });
-      window.addEventListener('wheel', start, { once: true });
-      window.addEventListener('keydown', start, { once: true });
+  // Müzik autoplay fallback
+  ... (senin mevcut müzik kodun) ...
+
+  // Galeri lightbox
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const close = lb.querySelector('.lb-close');
+
+    document.querySelectorAll('.gallery-grid img').forEach(img=>{
+      img.addEventListener('click',()=>{
+        lbImg.src = img.src;
+        lbImg.alt = img.alt || '';
+        lb.classList.remove('hidden');
+      });
     });
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden && a.paused) a.play().catch(()=>{});
-    });
+
+    const hide=()=>lb.classList.add('hidden');
+    close.addEventListener('click',hide);
+    lb.addEventListener('click', (e)=>{ if(e.target===lb) hide(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') hide(); });
   })();
   </script>
-
 </body>
 </html>
